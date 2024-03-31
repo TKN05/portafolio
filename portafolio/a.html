@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="bienvenida-box">
+                <span id="bienvenido"></span>
+                <span class="cursor"></span>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const mensaje = "¡Bienvenido!"; // El mensaje que deseas mostrar
+                    const velocidad = 100; // Velocidad de la animación en milisegundos
+                    const bienvenidoElemento = document.getElementById('bienvenido');
+                    const cursorElemento = document.querySelector('.cursor');
+
+                    function mostrarMensajeConEfecto() {
+                        let i = 0;
+                        const intervalo = setInterval(() => {
+                            bienvenidoElemento.textContent += mensaje[i];
+                            i++;
+                            if (i === mensaje.length) {
+                                clearInterval(intervalo);
+                                cursorElemento.style.display = 'none';
+                            }
+                        }, velocidad);
+                    }
+
+                    mostrarMensajeConEfecto();
+                });
+            </script>
+
+            <div class="content-box">
+                <div class="content">
+                    <p>¡Hola a todos! Soy Martin, un estudiante técnico de programación en nivel secundario de Pontevedra, Buenos Aires, Argentina. A mis 18 años, he explorado diversos roles en programación, desde la gestión de bases de datos hasta el desarrollo de aplicaciones y sitios web, tanto en el front-end como en el back-end.</p>
+
+                    <p>Mi verdadera pasión es el rol de Project Manager. Disfruto organizando equipos, asignando tareas y guiando a las personas para que utilicen su máximo potencial. Creo firmemente en la colaboración y la comunicación efectiva para alcanzar el éxito en cualquier proyecto.</p>
+
+                    <p>Estoy emocionado por seguir creciendo en el campo de la tecnología, enfrentando nuevos desafíos y aprendiendo como profesional.</p>
+
+                    <p>¡Gracias por conocerme!</p>
+                </div>
+                <nav class="nav-box">
+                    <ul>
+                        <li><a href="porta.html">Inicio</a></li>
+                        <br>
+                        <li><a href="proyecto.html">Proyectos</a></li>
+                        <br>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <svg class="border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <rect x="1" y="1" width="98" height="98" stroke="black" fill="none" stroke-width="2" />
+            </div>
+             <div class="social-icons">
+                <a href="https://www.instagram.com/martinbritez.05/" class="icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/TKN05" class="icon github"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/tiinnnnnnnnn" class="icon twitter"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:britezmartin2005@gmail.com" class="icon gmail"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

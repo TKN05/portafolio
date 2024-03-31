@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #1d1d20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+}
+.box {
+    position: relative;
+    background-color: #1d1d20;
+    padding: 20px 40px;
+    margin: 20px auto;
+    border-radius: 20px;
+    color: #fff;
+    max-width: none;
+    width: 100%;
+    border-width: 0; /* Inicialmente sin borde */
+}
+/*
+.box::before,
+.box::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;  Grosor del borde 
+    background: linear-gradient(to right, red, black);  Degradado en rojo y negro 
+    animation: borderGradient 5s infinite linear;  Animación del degradado 
+}*/
+
+
+.box::before {
+    top: 0; /* Alinear al borde superior */
+    left: 0; /* Alinear al borde izquierdo */
+    border-top-left-radius: 20px; /* Redondear la esquina superior izquierda */
+}
+
+.box::after {
+    bottom: 0; /* Alinear al borde inferior */
+    right: 0; /* Alinear al borde derecho */
+    border-bottom-right-radius: 20px; /* Redondear la esquina inferior derecha */
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+#bienvenido {
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        color: white;
+        display: inline-block;
+    }
+    
+    /* Estilo para el cursor */
+    .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 24px;
+        background-color: red;
+        animation: blinkCursor 0.8s infinite;
+    }
+    
+    /* Animación para el cursor */
+    @keyframes blinkCursor {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    order: 1; /* Cambiamos el orden del contenido */
+}
+
+.nav-box {
+    order: 2; /* Cambiamos el orden del menú de navegación */
+    margin-left: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Agregar transición para transformar al pasar el mouse */
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease; /* Agregar transición para cambiar de color al pasar el mouse */
+}
+
+nav ul li:hover {
+    transform: scale(1.2); /* Agrandar el enlace del menú al pasar el mouse */
+}
+
+nav ul li:hover a {
+    color: #FF4500; /* Cambiar el color del texto al pasar el mouse */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(to right, red, black);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li:hover a::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #fff; /* Color inicial */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición de color y transformación al pasar el mouse */
+}
+
+.icon:hover {
+    color: #FF4500; /* Cambiar de color al pasar el mouse */
+    transform: scale(1.2); /* Agrandar el icono al pasar el mouse */
+}
+
+/* Estilos de la galería */
+.box-gallery {
+    position: relative;
+    overflow: hidden;
+    width: 600px; /* Ancho de la galería */
+    height: 400px; /* Alto de la galería */
+    margin: auto;
+}
+
+.box-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.box-gallery img.active {
+    opacity: 1;
+}
+
+.box-gallery figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
